@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="${g.message(code:"miBiblioteca.titulo")}"/>
+        <g:layoutTitle default="${message(code:"miBiblioteca.titulo")}"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
@@ -34,8 +34,8 @@
         <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
         <li><g:link class="list" controller="autor" action="index"><g:message code="autor.list" /></g:link></li>
         <li><g:link class="list" controller="libro" action="index"><g:message code="libro.list" /></g:link></li>
-        <li><g:link class="create" controller="autor" action="create"><g:message code="default.new.label" args="['autor']" /></g:link></li>
-        <li><g:link class="create" controller="libro" action="create"><g:message code="default.new.label" args="['libro']" /></g:link></li>
+        <li><g:link class="create" controller="autor" action="create"><g:message code="default.new.label" args="[message(code:'autor.label')]" /></g:link></li>
+        <li><g:link class="create" controller="libro" action="create"><g:message code="default.new.label" args="[message(code:'libro.label')]" /></g:link></li>
     </ul>
 </div>
 
