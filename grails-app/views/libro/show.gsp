@@ -31,7 +31,7 @@
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.fechaCompra.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.fechaCompra}</div>
+                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaCompra}"/></div>
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.formato.label" /></span>
@@ -43,11 +43,11 @@
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.fechaInicio.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.fechaInicioLectura}</div>
+                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaInicioLectura}"/></div>
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.fechaFin.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.fechaFinLectura}</div>
+                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaFinLectura}"/></div>
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.categoria.label" /></span>
