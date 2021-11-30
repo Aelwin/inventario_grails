@@ -4,5 +4,5 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 enum Formato {
-    FISICO, DIGITAL
+    FISICO, DIGITAL, AUDIOLIBRO
 }
