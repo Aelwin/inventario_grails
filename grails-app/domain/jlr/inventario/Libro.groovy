@@ -1,5 +1,9 @@
 package jlr.inventario
 
+import jlr.inventario.enumerado.Formato
+import jlr.inventario.enumerado.Idioma
+import jlr.inventario.enumerado.SiNo
+
 class Libro {
 
     String titulo

@@ -1,5 +1,7 @@
 package jlr.inventario
 
+import jlr.inventario.enumerado.SiNo
+
 class Prestamo {
 
     String nombre
