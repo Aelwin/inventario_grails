@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'autor.label', default: 'Autor')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <g:set var="entityName" value="${message(code: 'autor.label')}" />        
     </head>
     <body>
         <div id="create-autor" class="content scaffold-create" role="main">
@@ -26,7 +25,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label')}" />
                 </fieldset>
             </g:form>
         </div>

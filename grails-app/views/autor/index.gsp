@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'autor.label', default: 'Autor')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <g:set var="entityName" value="${message(code: 'autor.label')}" />        
     </head>
     <body>
         <div id="list-autor" class="content scaffold-list" role="main">

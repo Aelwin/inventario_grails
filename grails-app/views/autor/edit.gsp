@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'autor.label', default: 'Autor')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <g:set var="entityName" value="${message(code: 'autor.label')}" />        
     </head>
     <body>
         <div id="edit-autor" class="content scaffold-edit" role="main">
@@ -24,7 +23,7 @@
                     <f:all bean="autor"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    <input class="save" type="submit" value="${message(code: 'default.button.update.label')}" />
                 </fieldset>
             </g:form>
         </div>
