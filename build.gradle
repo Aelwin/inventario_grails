@@ -6,6 +6,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
         classpath "org.grails.plugins:hibernate5:7.1.0"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.6"
+        classpath "org.grails.plugins:views-gradle:2.1.0"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.3.4"
     }
 }
@@ -18,6 +19,7 @@ apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"com.github.erdi.webdriver-binaries"
+apply plugin:"org.grails.plugins.views-json"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"com.bertramlabs.asset-pipeline"
 
@@ -55,6 +57,8 @@ dependencies {
     implementation "org.grails.plugins:scaffolding"
     implementation "org.grails.plugins:hibernate5"
     implementation "org.hibernate:hibernate-core:5.5.7.Final"
+    implementation "org.grails.plugins:views-json"
+    implementation "org.grails.plugins:views-json-templates"
     implementation "org.grails.plugins:events"
     implementation "org.grails.plugins:gsp"
     profile "org.grails.profiles:web"
@@ -63,6 +67,7 @@ dependencies {
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
     runtimeOnly "javax.xml.bind:jaxb-api:2.3.1"
     runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails:3.3.4"
+    runtimeOnly "org.postgresql:postgresql"
     testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.mockito:mockito-core"
