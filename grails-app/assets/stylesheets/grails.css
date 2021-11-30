@@ -30,6 +30,7 @@ pre {
 .navbar {
     margin-bottom: 0px;
     padding-right: 110px;
+    height: 10%;
 }
 .navbar .container {
     margin: 10px;
@@ -44,7 +45,8 @@ pre {
 
 }
 .navbar-dark, .navbar-static-top {
-    background-color: #424649;
+    /*background-color: #424649;*/
+    background-image: url("biblioteca_banner.jpg");
     border: 0px;
 }
 a.navbar-brand {
