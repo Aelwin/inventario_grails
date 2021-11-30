@@ -256,8 +256,8 @@ select[multiple] {
 }
 
 textarea {
-    width: 250px;
-    height: 150px;
+    width: 700px;
+    height: 100px;
     overflow: auto; /* IE always renders vertical scrollbar without this */
     vertical-align: top;
 }
@@ -603,4 +603,8 @@ img.grails-logo {
 
 .textoCentrado {
     text-align: center;
+}
+
+select.autores {
+    width: 175px;
 }

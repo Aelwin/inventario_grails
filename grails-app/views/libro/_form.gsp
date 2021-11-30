@@ -9,7 +9,7 @@
 
 <div class="fieldcontain">
     <label for="autores"><g:message code="autores.label" /><span class="required-indicator">*</span></label>    
-    <g:select name="autores" from="${Autor.list()}" value="${libro.autores}" multiple="true" required="true" />
+    <g:select name="autores" from="${Autor.list()}" value="${libro.autores}" multiple="true" required="true" class="autores" />
     <g:link controller="autor" action="create"><g:message code="default.new.label" args="[message(code:'autor.label')]" /></g:link>
 </div>
 
@@ -60,7 +60,7 @@
 
 <div class="fieldcontain">
     <label for="sinopsis"><g:message code="libro.sinopsis.label" /></label>
-    <input type="text" name="sinopsis" value="${libro.sinopsis}" id="sinopsis">
+    <textarea name="sinopsis" id="sinopsis">${libro.sinopsis}</textarea>
 </div>
 
 <div class="fieldcontain">
