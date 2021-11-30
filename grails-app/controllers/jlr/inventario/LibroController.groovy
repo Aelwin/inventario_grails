@@ -1,6 +1,7 @@
 package jlr.inventario
 
 import grails.validation.ValidationException
+
 import static org.springframework.http.HttpStatus.*
 
 class LibroController {
@@ -41,14 +42,18 @@ class LibroController {
     }
 
     def save(Libro libro) {
+        libro.autores.each { Autor autor ->
+            libro.addToAutores(autor)
+        }
+
         if (!libro) {
             notFound()
             return
         }
 
-        try {
+        if (libro.validate()) {
             libroService.save(libro)
-        } catch (ValidationException e) {
+        } else {
             respond libro.errors, view:'create'
             return
         }
