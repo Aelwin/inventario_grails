@@ -1,5 +1,8 @@
 package jlr.inventario
 
+import grails.gorm.transactions.Transactional
+
+@Transactional
 class LibroService {
         
     Libro get(Serializable id) {
@@ -19,7 +22,7 @@ class LibroService {
     }
 
     Libro save(Libro libro) {
-        libro.save(flush: true)        
+        libro.save(flush: true)
     }
     
     Libro findByTituloLike(String titulo) {
