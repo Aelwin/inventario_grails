@@ -19,7 +19,6 @@
             </g:hasErrors>
             <g:form resource="${this.libro}" method="POST">
                 <fieldset class="form">
-                    
                     <g:render template="form"/>
                 </fieldset>
                 <fieldset class="buttons">
