@@ -9,7 +9,7 @@
 
 <div class="fieldcontain">
     <label for="autores"><g:message code="autores.label" /><span class="required-indicator">*</span></label>    
-    <g:select name="autores" from="${Autor.list()}" value="${libro.autores}" multiple="true" required="true" class="autores" />
+    <g:select name="autores" from="${Autor.list()}" value="${libro.autores*.id}" multiple="true" optionKey="id" required="true" class="autores" />
     <g:link controller="autor" action="create"><g:message code="default.new.label" args="[message(code:'autor.label')]" /></g:link>
 </div>
 
