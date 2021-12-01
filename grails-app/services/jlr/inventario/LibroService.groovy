@@ -21,8 +21,8 @@ class LibroService {
 
     }
 
-    Libro save(Libro libro) {
-        libro.save(flush: true)
+    Libro save(Libro libro, validar = true) {
+        libro.save(flush: true, validate: validar)
     }
     
     Libro findByTituloLike(String titulo) {
