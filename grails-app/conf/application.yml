@@ -106,9 +106,9 @@ environments:
     development:
         dataSource:
             dbCreate: create-drop            
-            url: jdbc:postgresql://localhost:5432/Inventario
+            url: jdbc:postgresql://localhost:5432/inventario
             username: postgres
-            password: 200592
+            password: root
     test:
         dataSource:
             dbCreate: update
