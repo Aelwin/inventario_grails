@@ -42,6 +42,8 @@ class LibroController {
     }
 
     def save(Libro libro) {
+        //Aunque en la variable libro tiene bien la lista de autores, al guardar en BBDD no hace las inserts en la tabla
+        //de la relación. Haciendo esto sí, aunque a mi entender es redundante
         libro.autores.each { Autor autor ->
             libro.addToAutores(autor)
         }
@@ -52,7 +54,7 @@ class LibroController {
         }
 
         if (libro.validate()) {
-            libroService.save(libro)
+            libroService.save(libro, false)
         } else {
             respond libro.errors, view:'create'
             return
