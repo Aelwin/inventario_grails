@@ -67,7 +67,11 @@
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.valoracion.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.valoracion}</div>
+                    <div class="property-value" aria-labelledby="propietario-label">
+                        <g:each in="${1..5}" var="i">
+                            <span class="${i <= libro.valoracion ? 'showEstrellaSelected' : 'showEstrella'}">★</span>
+                        </g:each>
+                    </div>
                 </li>
                 <li class="fieldcontain">
                     <span id="propietario-label" class="property-label"><g:message code="libro.imagen.label" /></span>

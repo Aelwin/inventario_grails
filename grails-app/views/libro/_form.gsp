@@ -20,7 +20,7 @@
 
 <div class="fieldcontain">
     <label for="fechaCompra"><g:message code="libro.fechaCompra.label" /></label>
-    <input type="date" name="fechaCompra" value="${libro.fechaCompra}" id="fechaCompra">
+    <input type="date" name="fechaCompra" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaCompra)}" id="fechaCompra">
 </div>
 
 <div class="fieldcontain">
@@ -35,12 +35,12 @@
 
 <div class="fieldcontain">
     <label for="fechaInicioLectura"><g:message code="libro.fechaInicio.label" /></label>
-    <input type="date" name="fechaInicioLectura" value="${libro.fechaInicioLectura}" id="fechaInicioLectura">
+    <input type="date" name="fechaInicioLectura" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaInicioLectura)}" id="fechaInicioLectura">
 </div>
 
 <div class="fieldcontain">
     <label for="fechaFinLectura"><g:message code="libro.fechaFin.label" /></label>
-    <input type="date" name="fechaFinLectura" value="${libro.fechaFinLectura}" id="fechaFinLectura">
+    <input type="date" name="fechaFinLectura" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaFinLectura)}" id="fechaFinLectura">
 </div>
 
 <div class="fieldcontain">
@@ -65,7 +65,19 @@
 
 <div class="fieldcontain">
     <label for="valoracion"><g:message code="libro.valoracion.label" /></label>
-    <input type="range" name="valoracion" value="${libro.valoracion}" id="valoracion" min="1" max="10">
+    <input type="hidden" id="estrellasChecked" value="${libro.valoracion}" />
+    <p id="estrellas" class="clasificacion">
+        <input id="radio1" type="radio" name="valoracion" value="5">
+        <label for="radio1">★</label>
+        <input id="radio2" type="radio" name="valoracion" value="4">
+        <label for="radio2">★</label>
+        <input id="radio3" type="radio" name="valoracion" value="3">
+        <label for="radio3">★</label>
+        <input id="radio4" type="radio" name="valoracion" value="2">
+        <label for="radio4">★</label>
+        <input id="radio5" type="radio" name="valoracion" value="1">
+        <label for="radio5">★</label>
+    </p>
 </div>
 
 <div class="fieldcontain">
@@ -77,3 +89,10 @@
     <label for="imagen"><g:message code="libro.imagen.label" /></label>
     <input type="text" name="imagen" value="${libro.imagen}" id="imagen">
 </div>
+
+<script type="text/javascript">
+    $(function() {        
+        var estrellasChecked = $("#estrellasChecked").val();        
+        $("input[id='radio" + (6-estrellasChecked) + "']").attr('checked', true);
+    });
+</script>

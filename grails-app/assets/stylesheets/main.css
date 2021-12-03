@@ -608,3 +608,49 @@ img.grails-logo {
 select.autores {
     width: 175px;
 }
+
+#estrellas {
+  width: 250px;
+  margin: 0 auto;
+}
+
+#estrellas p {
+  text-align: center;
+}
+
+#estrellas label {
+  font-size: 20px;
+}
+
+#estrellas input[type="radio"] {
+  display: none;
+}
+
+#estrellas label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  display: inline-flex;
+}
+
+#estrellas label:hover,
+#estrellas label:hover ~ label {
+  color: orange;
+}
+
+#estrellas input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.showEstrella {
+    font-size: 20px;
+    color: grey;
+}
+
+.showEstrellaSelected {
+    font-size: 20px;
+    color: orange;
+}
