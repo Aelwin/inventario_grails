@@ -18,7 +18,7 @@ class LibroService {
     }
 
     void delete(Serializable id) {
-
+        Libro.get(id).delete()
     }
 
     Libro save(Libro libro, validar = true) {
