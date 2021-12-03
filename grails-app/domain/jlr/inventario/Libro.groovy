@@ -32,7 +32,7 @@ class Libro {
     	fechaFinLectura nullable: true
     	isbn nullable: true
     	sinopsis nullable: true
-    	valoracion nullable: true, range: 1..10
+    	valoracion nullable: true, range: 1..5
     	imagen nullable: true
     	editorial nullable: true
     	fechaCompra nullable: true
