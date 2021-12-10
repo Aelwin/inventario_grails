@@ -9,11 +9,15 @@
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
-            </g:if>            
-            <f:table collection="${libroList}" properties="['titulo', 'autores', 'propietario', 'formato', 'idioma', 'fechaCompra', 'leido', 'valoracion']" />
-
-            <div class="pagination">
-                <g:paginate total="${libroCount ?: 0}" />
+            </g:if>
+            <div>
+                <g:render template="filtro" />
+            </div>
+            <div class="error"></div>
+            <div id="resultado">
+                <g:if test="${libroList}">
+                    <g:render template="resultadoFiltro" />
+                </g:if>
             </div>
         </div>
     </body>

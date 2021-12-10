@@ -1,6 +1,7 @@
 package jlr.inventario
 
 import grails.validation.ValidationException
+import jlr.inventario.FiltroCommand
 
 import static org.springframework.http.HttpStatus.*
 
@@ -17,6 +18,10 @@ class LibroController {
     def list(Integer max) {        
         params.max = Math.min(max ?: 10, 100)
         respond libroService.list(params), model:[libroCount: libroService.count()]
+    }
+
+    def resultadoFiltro(FiltroCommand filtroBusqueda) {
+        render "AAAAAAAAAAAAA"
     }
 
     def show(Long id) {

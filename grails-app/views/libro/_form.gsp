@@ -1,6 +1,7 @@
 <%@ page import="jlr.inventario.enumerado.Idioma" %>
 <%@ page import="jlr.inventario.enumerado.Formato" %>
 <%@ page import="jlr.inventario.Autor" %>
+<%@ page import="jlr.inventario.AppConstantes" %>
 
 <div class="fieldcontain">
     <label for="titulo"><g:message code="libro.titulo.label" /><span class="required-indicator">*</span></label>
@@ -20,7 +21,7 @@
 
 <div class="fieldcontain">
     <label for="fechaCompra"><g:message code="libro.fechaCompra.label" /></label>
-    <input type="date" name="fechaCompra" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaCompra)}" id="fechaCompra">
+    <input type="date" name="fechaCompra" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.fechaCompra)}" id="fechaCompra">
 </div>
 
 <div class="fieldcontain">
@@ -35,12 +36,12 @@
 
 <div class="fieldcontain">
     <label for="fechaInicioLectura"><g:message code="libro.fechaInicio.label" /></label>
-    <input type="date" name="fechaInicioLectura" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaInicioLectura)}" id="fechaInicioLectura">
+    <input type="date" name="fechaInicioLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.fechaInicioLectura)}" id="fechaInicioLectura">
 </div>
 
 <div class="fieldcontain">
     <label for="fechaFinLectura"><g:message code="libro.fechaFin.label" /></label>
-    <input type="date" name="fechaFinLectura" value="${formatDate(format: 'yyyy-MM-dd', date: libro.fechaFinLectura)}" id="fechaFinLectura">
+    <input type="date" name="fechaFinLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.fechaFinLectura)}" id="fechaFinLectura">
 </div>
 
 <div class="fieldcontain">
