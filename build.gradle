@@ -78,6 +78,9 @@ dependencies {
     testImplementation "org.seleniumhq.selenium:selenium-support:3.141.59"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:3.141.59"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:3.141.59"
+
+    //para desplegar en Heroku
+    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 
 bootRun {
@@ -114,8 +117,30 @@ tasks.withType(Test) {
     systemProperty "webdriver.gecko.driver", System.getProperty('webdriver.gecko.driver')
 }
 
-
 assets {
     minifyJs = true
     minifyCss = true
 }
+
+//Para desplegar en Heroku
+task stage() {
+    dependsOn clean, war
+}
+
+tasks.stage.doLast() {
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/assetCompile")
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/libs", exclude: "*.war")
+}
+
+war.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "webapp-runner*"
+    }
+}
+
+stage.dependsOn(copyToLib)
