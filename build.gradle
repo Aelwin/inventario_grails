@@ -80,7 +80,7 @@ dependencies {
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:3.141.59"
 
     //para desplegar en Heroku
-    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+    implementation "com.github.jsimone:webapp-runner:8.5.11.3"
 }
 
 bootRun {
