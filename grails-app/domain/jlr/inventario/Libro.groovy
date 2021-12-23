@@ -20,10 +20,9 @@ class Libro {
 	String categoria
 	Formato formato
 	Idioma idioma
-	Prestamo prestamo
 
 	static belongsTo = Autor
-	static hasMany = [autores: Autor]
+	static hasMany = [autores: Autor, prestamos: Prestamo]
 
 	static transients = ['leido']	
 
@@ -38,11 +37,12 @@ class Libro {
     	fechaCompra nullable: true
     	observaciones nullable: true
     	categoria nullable: true
-    	prestamo nullable: true
+    	prestamos nullable: true
     }
 
     static mapping = {		
 		version false
+		prestamos cascade: 'all-delete-orphan'
 	}
 
 	SiNo getLeido() {
