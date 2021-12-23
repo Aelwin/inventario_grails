@@ -21,7 +21,7 @@ class LibroController {
     }
 
     def resultadoFiltro(FiltroCommand filtroBusqueda) {
-        render "AAAAAAAAAAAAA"
+        respond libroService.filtrarLibros(filtroBusqueda)        
     }
 
     def show(Long id) {
