@@ -11,6 +11,7 @@ class Autor {
 
     static mapping = {		
 		version false
+		id generator: 'increment'
 		libros cascade: 'all-delete-orphan'
 	}
 

@@ -42,6 +42,7 @@ class Libro {
 
     static mapping = {		
 		version false
+		id generator: 'increment'
 		prestamos cascade: 'all-delete-orphan'
 	}
 

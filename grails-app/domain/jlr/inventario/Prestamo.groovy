@@ -15,5 +15,6 @@ class Prestamo {
 
     static mapping = {		
 		version false
+		id generator: 'increment'
 	}
 }
