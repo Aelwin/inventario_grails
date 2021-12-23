@@ -12,8 +12,8 @@
             </g:if>
             <ol class="property-list libro">
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.titulo.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.titulo}</div>
+                    <span id="titulo-label" class="property-label"><g:message code="libro.titulo.label" /></span>
+                    <div class="property-value" aria-labelledby="titulo-label">${libro.titulo}</div>
                 </li>
                 <li class="fieldcontain">
                     <span id="autores-label" class="property-label"><g:message code="autores.label" /></span>
@@ -30,52 +30,52 @@
                     <div class="property-value" aria-labelledby="propietario-label">${libro.propietario}</div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.fechaCompra.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaCompra}"/></div>
+                    <span id="fechaCompra-label" class="property-label"><g:message code="libro.fechaCompra.label" /></span>
+                    <div class="property-value" aria-labelledby="fechaCompra-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaCompra}"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.formato.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label"><g:message code="Enum.Formato.${libro.formato}" /></div>
+                    <span id="formato-label" class="property-label"><g:message code="libro.formato.label" /></span>
+                    <div class="property-value" aria-labelledby="formato-label"><g:message code="Enum.Formato.${libro.formato}" /></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.idioma.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label"><g:message code="Enum.Idioma.${libro.idioma}" /></div>
+                    <span id="idioma-label" class="property-label"><g:message code="libro.idioma.label" /></span>
+                    <div class="property-value" aria-labelledby="idioma-label"><g:message code="Enum.Idioma.${libro.idioma}" /></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.fechaInicio.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaInicioLectura}"/></div>
+                    <span id="fechaInicio-label" class="property-label"><g:message code="libro.fechaInicio.label" /></span>
+                    <div class="property-value" aria-labelledby="fechaInicio-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaInicioLectura}"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.fechaFin.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaFinLectura}"/></div>
+                    <span id="fechaFin-label" class="property-label"><g:message code="libro.fechaFin.label" /></span>
+                    <div class="property-value" aria-labelledby="fechaFin-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaFinLectura}"/></div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.categoria.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.categoria}</div>
+                    <span id="categoria-label" class="property-label"><g:message code="libro.categoria.label" /></span>
+                    <div class="property-value" aria-labelledby="categoria-label">${libro.categoria}</div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.isbn.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.isbn}</div>
+                    <span id="isbn-label" class="property-label"><g:message code="libro.isbn.label" /></span>
+                    <div class="property-value" aria-labelledby="isbn-label">${libro.isbn}</div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.editorial.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.editorial}</div>
+                    <span id="editorial-label" class="property-label"><g:message code="libro.editorial.label" /></span>
+                    <div class="property-value" aria-labelledby="editorial-label">${libro.editorial}</div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.sinopsis.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.sinopsis}</div>
+                    <span id="sinopsis-label" class="property-label"><g:message code="libro.sinopsis.label" /></span>
+                    <div class="property-value" aria-labelledby="sinopsis-label">${libro.sinopsis}</div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.valoracion.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">
+                    <span id="valoracion-label" class="property-label"><g:message code="libro.valoracion.label" /></span>
+                    <div class="property-value" aria-labelledby="valoracion-label">
                         <g:each in="${1..5}" var="i">
                             <span class="${i <= libro.valoracion ? 'showEstrellaSelected' : 'showEstrella'}">★</span>
                         </g:each>
                     </div>
                 </li>
                 <li class="fieldcontain">
-                    <span id="propietario-label" class="property-label"><g:message code="libro.imagen.label" /></span>
-                    <div class="property-value" aria-labelledby="propietario-label">${libro.imagen}</div>
+                    <span id="imagen-label" class="property-label"><g:message code="libro.imagen.label" /></span>
+                    <div class="property-value" aria-labelledby="imagen-label">${libro.imagen}</div>
                 </li>
             </ol>
             <g:form resource="${this.libro}" method="DELETE">
