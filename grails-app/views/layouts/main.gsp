@@ -34,8 +34,10 @@
         <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
         <li><g:link class="list" controller="autor" action="index"><g:message code="autor.list" /></g:link></li>
         <li><g:link class="list" controller="libro" action="index"><g:message code="libro.list" /></g:link></li>
+        <li><g:link class="list" controller="prestamo" action="index"><g:message code="prestamo.list" /></g:link></li>
         <li><g:link class="create" controller="autor" action="create"><g:message code="default.new.label" args="[message(code:'autor.label')]" /></g:link></li>
         <li><g:link class="create" controller="libro" action="create"><g:message code="default.new.label" args="[message(code:'libro.label')]" /></g:link></li>
+        <li><g:link class="create" controller="prestamo" action="create"><g:message code="default.new.label" args="[message(code:'prestamo.label')]" /></g:link></li>
     </ul>
 </div>
 
