@@ -7,14 +7,14 @@
 <g:form class="filtro">
 	<fieldset class="form">
 		<g:hiddenField name="max" value="${filtroBusqueda?.max?:AppConstantes.REGISTROS_POR_PAGINA}" />
-		<g:hiddenField name="offset" value="${filtroBusqueda?.offset}" />
+		<g:hiddenField name="offset" value="${filtroBusqueda?.offset?:0}" />
 		<div class="fieldcontain">
 			<label for="titulo"><g:message code="libro.titulo.label" /></label>    		
     		<g:field type="text" name="titulo" value="${filtroBusqueda?.titulo}"/>
 		</div>
 		<div class="fieldcontain">
-		    <label for="autores"><g:message code="autores.label" /></label>    
-		    <g:select name="autores" from="${Autor.list()}" value="${filtroBusqueda?.autores*.id}" multiple="true" optionKey="id"class="autores" />
+		    <label for="autores"><g:message code="autores.label" /><span class="required-indicator">*</span></label>    
+		    <g:select name="autores" from="${Autor.list()}" value="${filtroBusqueda?.autores*.id}" multiple="true" optionKey="id"  class="autores" />		    
 		</div>
 		<div class="fieldcontain">
 		    <label for="propietario"><g:message code="libro.propietario.label" /></label>		    
@@ -53,3 +53,5 @@
         <g:actionSubmit value="${message(code:'default.button.buscar.label')}" action="resultadoFiltro" />
     </fieldset>
 </g:form>
+
+<g:render template="autoresChosen"/>
