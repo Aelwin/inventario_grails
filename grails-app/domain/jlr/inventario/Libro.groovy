@@ -12,7 +12,7 @@ class Libro {
 	Date fechaFinLectura
 	String isbn
 	String sinopsis
-	int valoracion
+	Integer valoracion
 	String imagen
 	String editorial
 	Date fechaCompra
@@ -44,6 +44,11 @@ class Libro {
 		version false
 		id generator: 'increment'
 		prestamos cascade: 'all-delete-orphan'
+	}
+
+	def beforeValidate() {
+		println "AAA"
+		valoracion = valoracion == 0 ? null : valoracion
 	}
 
 	SiNo getLeido() {
