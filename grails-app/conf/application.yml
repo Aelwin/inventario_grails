@@ -109,6 +109,7 @@ environments:
             url: jdbc:postgresql://localhost:5432/inventario
             username: postgres
             password: root
+            logSql: true
     test:
         dataSource:
             dbCreate: update
