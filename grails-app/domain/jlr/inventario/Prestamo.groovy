@@ -5,7 +5,7 @@ import jlr.inventario.enumerado.SiNo
 class Prestamo {
 
     String nombre
-	Date fechaPrestamo
+	Date fecha
 	SiNo devuelto
 
 	static belongsTo = [libro: Libro]

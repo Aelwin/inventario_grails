@@ -23,7 +23,7 @@
                 </li>
                 <li class="fieldcontain">
                     <span id="fecha-label" class="property-label"><g:message code="prestamo.fecha.label" /></span>
-                    <div class="property-value" aria-labelledby="fecha-label"><g:formatDate format="dd/MM/yyyy" date="${prestamo.fechaPrestamo}"/></div>
+                    <div class="property-value" aria-labelledby="fecha-label"><g:formatDate format="dd/MM/yyyy" date="${prestamo.fecha}"/></div>
                 </li>
                 <li class="fieldcontain">
                     <span id="devuelto-label" class="property-label"><g:message code="prestamo.devuelto.label" /></span>

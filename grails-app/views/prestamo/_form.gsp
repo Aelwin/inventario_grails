@@ -11,8 +11,8 @@
     <input type="text" name="nombre" value="${prestamo.nombre}" required="true" id="nombre">
 </div>
 <div class="fieldcontain required">
-    <label for="fechaPrestamo"><g:message code="prestamo.fecha.label" /><span class="required-indicator">*</span></label>                        
-    <input type="date" name="fechaPrestamo" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: prestamo.fechaPrestamo)}" id="fechaPrestamo">
+    <label for="fecha"><g:message code="prestamo.fecha.label" /><span class="required-indicator">*</span></label>                        
+    <input type="date" name="fecha" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: prestamo.fecha)}" id="fecha">
 </div>
 <div class="fieldcontain required">
     <label for="devuelto"><g:message code="prestamo.devuelto.label" /><span class="required-indicator">*</span></label>
