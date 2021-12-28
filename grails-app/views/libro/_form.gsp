@@ -25,6 +25,11 @@
 </div>
 
 <div class="fieldcontain">
+    <label for="precio"><g:message code="libro.precio.label" /></label>    
+    <g:field type="number" name="precio" value="${libro.precio}" step=".01" />
+</div>
+
+<div class="fieldcontain">
     <label for="formato"><g:message code="libro.formato.label" /><span class="required-indicator">*</span></label>
     <g:select name="formato" from="${Formato.values()}" value="${libro.formato}" required="true" valueMessagePrefix="Enum.Formato" />
 </div>
@@ -34,14 +39,16 @@
     <g:select name="idioma" from="${Idioma.values()}" value="${libro.idioma}" required="true" valueMessagePrefix="Enum.Idioma" />
 </div>
 
+<g:hiddenField name="lecturas[0].id" value="${libro.lecturas ? libro.lecturas[0].id : null}" />
+
 <div class="fieldcontain">
-    <label for="fechaInicioLectura"><g:message code="libro.fechaInicio.label" /></label>
-    <input type="date" name="fechaInicioLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.fechaInicioLectura)}" id="fechaInicioLectura">
+    <label for="fechaInicio"><g:message code="libro.fechaInicio.label" /></label>
+    <input type="date" name="lecturas[0].fechaInicio" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaInicio : null)}" id="fechaInicio">
 </div>
 
 <div class="fieldcontain">
-    <label for="fechaFinLectura"><g:message code="libro.fechaFin.label" /></label>
-    <input type="date" name="fechaFinLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.fechaFinLectura)}" id="fechaFinLectura">
+    <label for="fechaFin"><g:message code="libro.fechaFin.label" /></label>
+    <input type="date" name="lecturas[0].fechaFin" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaFin : null)}" id="fechaFin">
 </div>
 
 <div class="fieldcontain">
@@ -66,17 +73,17 @@
 
 <div class="fieldcontain">
     <label for="valoracion"><g:message code="libro.valoracion.label" /></label>
-    <input type="hidden" id="estrellasChecked" value="${libro.valoracion}" />
+    <input type="hidden" id="estrellasChecked" value="${libro.lecturas ? libro.lecturas[0]?.valoracion : null}" />
     <p id="estrellas" class="clasificacion">
-        <input id="radio1" type="radio" name="valoracion" value="5">
+        <input id="radio1" type="radio" name="lecturas[0].valoracion" value="5">
         <label for="radio1">★</label>
-        <input id="radio2" type="radio" name="valoracion" value="4">
+        <input id="radio2" type="radio" name="lecturas[0].valoracion" value="4">
         <label for="radio2">★</label>
-        <input id="radio3" type="radio" name="valoracion" value="3">
+        <input id="radio3" type="radio" name="lecturas[0].valoracion" value="3">
         <label for="radio3">★</label>
-        <input id="radio4" type="radio" name="valoracion" value="2">
+        <input id="radio4" type="radio" name="lecturas[0].valoracion" value="2">
         <label for="radio4">★</label>
-        <input id="radio5" type="radio" name="valoracion" value="1">
+        <input id="radio5" type="radio" name="lecturas[0].valoracion" value="1">
         <label for="radio5">★</label>
     </p>
 </div>

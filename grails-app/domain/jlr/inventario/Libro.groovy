@@ -3,16 +3,14 @@ package jlr.inventario
 import jlr.inventario.enumerado.Formato
 import jlr.inventario.enumerado.Idioma
 import jlr.inventario.enumerado.SiNo
+import groovy.sql.Sql
 
 class Libro {
 
     String titulo
-	String propietario	
-	Date fechaInicioLectura
-	Date fechaFinLectura
+	String propietario
 	String isbn
 	String sinopsis
-	Integer valoracion
 	String imagen
 	String editorial
 	Date fechaCompra
@@ -20,39 +18,51 @@ class Libro {
 	String categoria
 	Formato formato
 	Idioma idioma
+	BigDecimal precio
 
 	static belongsTo = Autor
-	static hasMany = [autores: Autor, prestamos: Prestamo]
+	static hasMany = [autores: Autor, prestamos: Prestamo, lecturas: Lectura]
 
-	static transients = ['leido']	
+	static transients = ['leido']
 
     static constraints = {
-    	fechaInicioLectura nullable: true
-    	fechaFinLectura nullable: true
     	isbn nullable: true
     	sinopsis nullable: true
-    	valoracion nullable: true, range: 1..5
     	imagen nullable: true
     	editorial nullable: true
     	fechaCompra nullable: true
     	observaciones nullable: true
     	categoria nullable: true
     	prestamos nullable: true
+    	lecturas nullable: true
+    	precio nullable: true, scale: 2
     }
 
     static mapping = {		
 		version false
 		id generator: 'increment'
 		prestamos cascade: 'all-delete-orphan'
+		lecturas cascade: 'all-delete-orphan'
 	}
 
 	def beforeValidate() {
-		println "AAA"
-		valoracion = valoracion == 0 ? null : valoracion
+		lecturas?.removeAll { it.fechaInicio == null }
+	}
+
+	def beforeDelete() {
+		def dataSource = ApplicationContextHolder.grailsApplication.mainContext.getBean('dataSource')		
+		final Sql sql = new Sql(dataSource)
+        sql.executeUpdate("DELETE FROM AUTOR_LIBROS WHERE LIBRO_ID = $id")
 	}
 
 	SiNo getLeido() {
-		fechaFinLectura ? SiNo.SI : SiNo.NO
+		SiNo fechaFin = SiNo.NO
+		lecturas.each { lectura ->
+			if (lectura.fechaFin) {
+				fechaFin = SiNo.SI
+			}
+		}
+		fechaFin
 	}
 
 	@Override
