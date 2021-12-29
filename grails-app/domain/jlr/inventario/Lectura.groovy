@@ -17,6 +17,7 @@ class Lectura {
     static mapping = {		
 		version false
 		id generator: 'increment'
+		sort "libro.titulo"
 	}
 
 	def beforeValidate() {
