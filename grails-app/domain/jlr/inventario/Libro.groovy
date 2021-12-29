@@ -43,6 +43,7 @@ class Libro {
 		id generator: 'increment'
 		prestamos cascade: 'all-delete-orphan'
 		lecturas cascade: 'all-delete-orphan'
+		sort titulo: "asc"
 	}
 
 	def beforeValidate() {
@@ -50,6 +51,7 @@ class Libro {
 	}
 
 	def beforeDelete() {
+		//antes de borrar elimino manualmente la fila de la tabla que tiene la relación entre libro y autor
 		def dataSource = ApplicationContextHolder.grailsApplication.mainContext.getBean('dataSource')		
 		final Sql sql = new Sql(dataSource)
         sql.executeUpdate("DELETE FROM AUTOR_LIBROS WHERE LIBRO_ID = $id")
