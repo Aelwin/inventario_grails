@@ -35,7 +35,6 @@ class LibroService {
 
     @NotTransactional
     def filtrarLibros(FiltroCommand filtroBusqueda) {
-        println "A:${filtroBusqueda.autores*.id}"
         def criteria = Libro.createCriteria()        
         def resultado = criteria.list(max: filtroBusqueda.max, offset: filtroBusqueda.offset) {            
             and {
@@ -59,8 +58,12 @@ class LibroService {
                     log.debug "Filtramos entre las fechas de lectura ${filtroBusqueda.fechaInicioLectura}-${filtroBusqueda.fechaFinLectura}"
                     Date fechaHastaSinHora = filtroBusqueda.fechaFinLectura.clearTime()
                     if (fechaDesdeSinHora)
-                        ge('fechaInicioLectura', fechaDesdeSinHora)
-                    lt('fechaInicioLectura', fechaHastaSinHora + 1)
+                        lecturas {
+                            ge('fechaInicio', fechaDesdeSinHora)
+                        }
+                    lecturas {
+                        lt('fechaInicio', fechaHastaSinHora + 1)
+                    }
                 }
                 if (filtroBusqueda.categoria) {
                     log.debug "Filtramos por la categoria ${filtroBusqueda.categoria}"
