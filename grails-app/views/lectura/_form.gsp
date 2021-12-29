@@ -3,7 +3,7 @@
 
 <div class="fieldcontain required">
     <label for="libro"><g:message code="libro.label" /><span class="required-indicator">*</span></label>
-    <g:hiddenField name="libro.id"/>
+    <g:hiddenField name="libro.id" value="${lectura.libro?.id}" />
     <input type="text" name="libroTexto" value="${lectura.libro?.titulo}" required="true" id="libroTexto">
 </div>
 <div class="fieldcontain required">
@@ -22,15 +22,15 @@
     <label for="valoracion"><g:message code="lectura.valoracion.label" /></label>
     <input type="hidden" id="estrellasChecked" value="${lectura?.valoracion}" />
     <p id="estrellas" class="clasificacion">
-        <input id="radio1" type="radio" name="lectura.valoracion" value="5">
+        <input id="radio1" type="radio" name="valoracion" value="5">
         <label for="radio1">★</label>
-        <input id="radio2" type="radio" name="lectura.valoracion" value="4">
+        <input id="radio2" type="radio" name="valoracion" value="4">
         <label for="radio2">★</label>
-        <input id="radio3" type="radio" name="lectura.valoracion" value="3">
+        <input id="radio3" type="radio" name="valoracion" value="3">
         <label for="radio3">★</label>
-        <input id="radio4" type="radio" name="lectura.valoracion" value="2">
+        <input id="radio4" type="radio" name="valoracion" value="2">
         <label for="radio4">★</label>
-        <input id="radio5" type="radio" name="lectura.valoracion" value="1">
+        <input id="radio5" type="radio" name="valoracion" value="1">
         <label for="radio5">★</label>
     </p>
 </div>
