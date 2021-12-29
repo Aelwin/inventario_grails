@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'prestamo.label', default: 'Prestamo')}" />        
+        <g:set var="entityName" value="${message(code: 'prestamo.label')}" />        
     </head>
     <body>
         <div id="edit-prestamo" class="content scaffold-edit" role="main">
