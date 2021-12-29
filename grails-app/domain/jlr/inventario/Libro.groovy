@@ -57,14 +57,17 @@ class Libro {
         sql.executeUpdate("DELETE FROM AUTOR_LIBROS WHERE LIBRO_ID = $id")
 	}
 
+	/**
+	 * Devuelve si un libro ha sido leído por su propietario
+	*/
 	SiNo getLeido() {
-		SiNo fechaFin = SiNo.NO
+		SiNo haSidoLeido = SiNo.NO
 		lecturas.each { lectura ->
-			if (lectura.fechaFin) {
-				fechaFin = SiNo.SI
+			if (lectura.lector == propietario && lectura.fechaFin) {
+				haSidoLeido = SiNo.SI
 			}
 		}
-		fechaFin
+		haSidoLeido
 	}
 
 	@Override
