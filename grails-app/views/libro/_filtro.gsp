@@ -35,12 +35,12 @@
 		</div>
 
 		<div class="fieldcontain">
-		    <label for="fechaInicioLectura"><g:message code="libro.fechaInicio.label" /></label>		    
+		    <label for="fechaInicioLectura"><g:message code="lectura.fechaInicio.label" /></label>		    
 		    <g:field type="date" name="fechaInicioLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: filtroBusqueda?.fechaInicioLectura)}"/>
 		</div>
 
 		<div class="fieldcontain">
-		    <label for="fechaFinLectura"><g:message code="libro.fechaFin.label" /></label>
+		    <label for="fechaFinLectura"><g:message code="lectura.fechaFin.label" /></label>
 		    <g:field type="date" name="fechaFinLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: filtroBusqueda?.fechaFinLectura)}"/>
 		</div>
 
