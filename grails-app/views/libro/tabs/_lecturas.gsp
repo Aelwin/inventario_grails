@@ -14,7 +14,7 @@
 		        <div class="property-value" aria-labelledby="fechaFin-label"><g:formatDate format="dd/MM/yyyy" date="${lectura.fechaFin}"/></div>
 		    </li>
 		    <li class="fieldcontain">
-		        <span id="valoracion-label" class="property-label"><g:message code="libro.valoracion.label" /></span>
+		        <span id="valoracion-label" class="property-label"><g:message code="lectura.valoracion.label" /></span>
 		        <div class="property-value" aria-labelledby="valoracion-label">
 		            <g:each in="${1..5}" var="i">
 		                <span class="${i <= lectura.valoracion ? 'showEstrellaSelected' : 'showEstrella'}">★</span>
