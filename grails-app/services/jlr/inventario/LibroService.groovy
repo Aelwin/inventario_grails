@@ -65,6 +65,11 @@ class LibroService {
                         lt('fechaInicio', fechaHastaSinHora + 1)
                     }
                 }
+                if (filtroBusqueda.lector) {
+                    lecturas {
+                        ilike('lector', "%${filtroBusqueda.lector}%")
+                    }
+                }
                 if (filtroBusqueda.categoria) {
                     log.debug "Filtramos por la categoria ${filtroBusqueda.categoria}"
                     ilike('propietario', "%${filtroBusqueda.categoria}%")

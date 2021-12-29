@@ -7,7 +7,8 @@ class FiltroCommand implements grails.validation.Validateable {
 
 	String titulo
 	List<Autor> autores
-	String propietario	
+	String propietario
+	String lector	
 	Date fechaInicioLectura
 	Date fechaFinLectura	
 	Date fechaCompra
