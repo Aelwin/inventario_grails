@@ -654,3 +654,7 @@ select.autores {
     font-size: 20px;
     color: orange;
 }
+
+.fieldcontain .labelCorta {
+    width: 15%;
+}
