@@ -25,7 +25,7 @@
 <script type="text/javascript">
     $(function() {
         $("#libroTexto").autocomplete({
-            source: "<g:createLink controller='prestamo' action='autoCompleteLibro'/>",
+            source: "<g:createLink controller='autoComplete' action='autoCompleteLibro'/>",
             minLength: 2, // triggered only after minimum 2 characters have been entered.
             select: function(event, ui) { // event handler when user selects an element from the list.
                 $("#libro\\.id").val(ui.item.id); // update the hidden field.
