@@ -13,7 +13,7 @@
     		<g:field type="text" name="titulo" value="${filtroBusqueda?.titulo}"/>
 		</div>
 		<div class="fieldcontain">
-		    <label for="autores"><g:message code="autores.label" /><span class="required-indicator">*</span></label>    
+		    <label for="autores"><g:message code="autores.label" /></label>    
 		    <g:select name="autores" from="${Autor.list()}" value="${filtroBusqueda?.autores*.id}" multiple="true" optionKey="id"  class="autores" />		    
 		</div>
 		<div class="fieldcontain">
@@ -26,24 +26,23 @@
 		</div>
 		<div class="fieldcontain">
 		    <label for="formato"><g:message code="libro.formato.label" /></label>
-		    <g:select name="formato" from="${Formato.values()}" value="${filtroBusqueda?.formato}" valueMessagePrefix="Enum.Formato" />
+		    <g:select name="formato" from="${Formato.values()}" value="${filtroBusqueda?.formato}" valueMessagePrefix="Enum.Formato" noSelection="${['null': g.message(code: "Enum.Formato.noSeleccion")]}" />
 		</div>
-
 		<div class="fieldcontain">
-		    <label for="idioma"><g:message code="libro.idioma.label" /><span class="required-indicator">*</span></label>
-		    <g:select name="idioma" from="${Idioma.values()}" value="${filtroBusqueda?.idioma}" required="true" valueMessagePrefix="Enum.Idioma" />
+		    <label for="idioma"><g:message code="libro.idioma.label" /></label>
+		    <g:select name="idioma" from="${Idioma.values()}" value="${filtroBusqueda?.idioma}" required="true" valueMessagePrefix="Enum.Idioma" noSelection="${['null': g.message(code: "Enum.Idioma.noSeleccion")]}" />
 		</div>
-
 		<div class="fieldcontain">
 		    <label for="fechaInicioLectura"><g:message code="lectura.fechaInicio.label" /></label>		    
 		    <g:field type="date" name="fechaInicioLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: filtroBusqueda?.fechaInicioLectura)}"/>
-		</div>
-
-		<div class="fieldcontain">
-		    <label for="fechaFinLectura"><g:message code="lectura.fechaFin.label" /></label>
+		
+		    <label for="fechaFinLectura" class="labelCorta"><g:message code="lectura.fechaFin.label" /></label>
 		    <g:field type="date" name="fechaFinLectura" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: filtroBusqueda?.fechaFinLectura)}"/>
 		</div>
-
+		<div class="fieldcontain">
+		    <label for="lector"><g:message code="lectura.lector.label" /></label>		    
+		    <g:field type="text" name="lector" value="${filtroBusqueda?.lector}"/>
+		</div>
 		<div class="fieldcontain">
 		    <label for="categoria"><g:message code="libro.categoria.label" /></label>		    
 		    <g:field type="text" name="categoria" value="${filtroBusqueda?.categoria}"/>
