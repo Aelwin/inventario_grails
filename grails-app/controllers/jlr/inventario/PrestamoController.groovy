@@ -5,12 +5,15 @@ import static org.springframework.http.HttpStatus.*
 
 class PrestamoController {
 
-    PrestamoService prestamoService
-    AutoCompleteService autoCompleteService
+    PrestamoService prestamoService    
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index(Integer max) {        
+        redirect action: "list", params: params
+    }
+
+    def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond prestamoService.list(params), model:[prestamoCount: prestamoService.count()]
     }
@@ -38,7 +41,7 @@ class PrestamoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), prestamo.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'prestamo.label'), prestamo.id])
                 redirect prestamo
             }
             '*' { respond prestamo, [status: CREATED] }
@@ -64,7 +67,7 @@ class PrestamoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), prestamo.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'prestamo.label'), prestamo.id])
                 redirect prestamo
             }
             '*'{ respond prestamo, [status: OK] }
@@ -81,21 +84,17 @@ class PrestamoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'prestamo.label'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
         }
     }
 
-    def autoCompleteLibro(String term) {        
-        respond autoCompleteService.recuperarLibros(term)
-    }
-
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'prestamo.label'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

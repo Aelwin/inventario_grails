@@ -9,7 +9,11 @@ class AutorController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index(Integer max) {        
+        redirect action: "list", params: params
+    }
+
+    def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond autorService.list(params), model:[autorCount: autorService.count()]
     }
@@ -37,7 +41,7 @@ class AutorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'autor.label', default: 'Autor'), autor.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'autor.label'), autor.id])
                 redirect autor
             }
             '*' { respond autor, [status: CREATED] }
@@ -63,7 +67,7 @@ class AutorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'autor.label', default: 'Autor'), autor.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'autor.label'), autor.id])
                 redirect autor
             }
             '*'{ respond autor, [status: OK] }
@@ -80,7 +84,7 @@ class AutorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'autor.label', default: 'Autor'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'autor.label'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +94,7 @@ class AutorController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'autor.label', default: 'Autor'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'autor.label'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }
