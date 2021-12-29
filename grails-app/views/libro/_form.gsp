@@ -42,12 +42,12 @@
 <g:hiddenField name="lecturas[0].id" value="${libro.lecturas ? libro.lecturas[0].id : null}" />
 
 <div class="fieldcontain">
-    <label for="fechaInicio"><g:message code="libro.fechaInicio.label" /></label>
+    <label for="fechaInicio"><g:message code="lectura.fechaInicio.label" /></label>
     <input type="date" name="lecturas[0].fechaInicio" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaInicio : null)}" id="fechaInicio">
 </div>
 
 <div class="fieldcontain">
-    <label for="fechaFin"><g:message code="libro.fechaFin.label" /></label>
+    <label for="fechaFin"><g:message code="lectura.fechaFin.label" /></label>
     <input type="date" name="lecturas[0].fechaFin" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaFin : null)}" id="fechaFin">
 </div>
 
@@ -72,7 +72,7 @@
 </div>
 
 <div class="fieldcontain">
-    <label for="valoracion"><g:message code="libro.valoracion.label" /></label>
+    <label for="valoracion"><g:message code="lectura.valoracion.label" /></label>
     <input type="hidden" id="estrellasChecked" value="${libro.lecturas ? libro.lecturas[0]?.valoracion : null}" />
     <p id="estrellas" class="clasificacion">
         <input id="radio1" type="radio" name="lecturas[0].valoracion" value="5">
