@@ -44,11 +44,26 @@
 <div class="fieldcontain">
     <label for="fechaInicio"><g:message code="lectura.fechaInicio.label" /></label>
     <input type="date" name="lecturas[0].fechaInicio" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaInicio : null)}" id="fechaInicio">
+
+    <label for="fechaFin" class="labelCorta"><g:message code="lectura.fechaFin.label" /></label>
+    <input type="date" name="lecturas[0].fechaFin" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaFin : null)}" id="fechaFin">
 </div>
 
 <div class="fieldcontain">
-    <label for="fechaFin"><g:message code="lectura.fechaFin.label" /></label>
-    <input type="date" name="lecturas[0].fechaFin" value="${formatDate(format: AppConstantes.FORMATO_FECHA_INGLES, date: libro.lecturas ? libro.lecturas[0]?.fechaFin : null)}" id="fechaFin">
+    <label for="valoracion"><g:message code="lectura.valoracion.label" /></label>
+    <input type="hidden" id="estrellasChecked" value="${libro.lecturas ? libro.lecturas[0]?.valoracion : null}" />
+    <p id="estrellas" class="clasificacion">
+        <input id="radio1" type="radio" name="lecturas[0].valoracion" value="5">
+        <label for="radio1">★</label>
+        <input id="radio2" type="radio" name="lecturas[0].valoracion" value="4">
+        <label for="radio2">★</label>
+        <input id="radio3" type="radio" name="lecturas[0].valoracion" value="3">
+        <label for="radio3">★</label>
+        <input id="radio4" type="radio" name="lecturas[0].valoracion" value="2">
+        <label for="radio4">★</label>
+        <input id="radio5" type="radio" name="lecturas[0].valoracion" value="1">
+        <label for="radio5">★</label>
+    </p>
 </div>
 
 <div class="fieldcontain">
@@ -69,23 +84,6 @@
 <div class="fieldcontain">
     <label for="sinopsis"><g:message code="libro.sinopsis.label" /></label>
     <textarea name="sinopsis" id="sinopsis">${libro.sinopsis}</textarea>
-</div>
-
-<div class="fieldcontain">
-    <label for="valoracion"><g:message code="lectura.valoracion.label" /></label>
-    <input type="hidden" id="estrellasChecked" value="${libro.lecturas ? libro.lecturas[0]?.valoracion : null}" />
-    <p id="estrellas" class="clasificacion">
-        <input id="radio1" type="radio" name="lecturas[0].valoracion" value="5">
-        <label for="radio1">★</label>
-        <input id="radio2" type="radio" name="lecturas[0].valoracion" value="4">
-        <label for="radio2">★</label>
-        <input id="radio3" type="radio" name="lecturas[0].valoracion" value="3">
-        <label for="radio3">★</label>
-        <input id="radio4" type="radio" name="lecturas[0].valoracion" value="2">
-        <label for="radio4">★</label>
-        <input id="radio5" type="radio" name="lecturas[0].valoracion" value="1">
-        <label for="radio5">★</label>
-    </p>
 </div>
 
 <div class="fieldcontain">
