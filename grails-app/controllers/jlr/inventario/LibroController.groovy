@@ -57,7 +57,7 @@ class LibroController {
             libro.addToAutores(autor)
         }
         //No hace bien el bindeo con decimales del string a BigDecimal
-        libro.precio = new BigDecimal(params.precio)
+        libro.precio = params.precio ? new BigDecimal(params.precio) : null
         if (libro.validate()) {
             libroService.save(libro, false)
         } else {
@@ -86,7 +86,7 @@ class LibroController {
 
         try {
             //No hace bien el bindeo con decimales del string a BigDecimal
-            libro.precio = new BigDecimal(params.precio)
+            libro.precio = params.precio ? new BigDecimal(params.precio) : null
             libroService.save(libro)
         } catch (ValidationException e) {
             respond libro.errors, view:'edit'
