@@ -47,17 +47,17 @@ class LibroController {
     }
 
     def save(Libro libro) {
+        if (!libro) {
+            notFound()
+            return
+        }
         //Aunque en la variable libro tiene bien la lista de autores, al guardar en BBDD no hace las inserts en la tabla
         //de la relación. Haciendo esto sí, aunque a mi entender es redundante
         libro.autores.each { Autor autor ->
             libro.addToAutores(autor)
         }
-
-        if (!libro) {
-            notFound()
-            return
-        }
-
+        //No hace bien el bindeo con decimales del string a BigDecimal
+        libro.precio = new BigDecimal(params.precio)
         if (libro.validate()) {
             libroService.save(libro, false)
         } else {
@@ -85,6 +85,8 @@ class LibroController {
         }
 
         try {
+            //No hace bien el bindeo con decimales del string a BigDecimal
+            libro.precio = new BigDecimal(params.precio)
             libroService.save(libro)
         } catch (ValidationException e) {
             respond libro.errors, view:'edit'

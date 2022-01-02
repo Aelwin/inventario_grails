@@ -25,8 +25,8 @@
 </div>
 
 <div class="fieldcontain">
-    <label for="precio"><g:message code="libro.precio.label" /></label>    
-    <g:field type="number" name="precio" value="${libro.precio}" step=".01" />
+    <label for="precio"><g:message code="libro.precio.label" /></label>
+    <input type="number" name="precio" value="${libro.precio}" step="0.01" />
 </div>
 
 <div class="fieldcontain">
