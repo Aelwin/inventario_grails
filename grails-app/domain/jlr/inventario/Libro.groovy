@@ -19,6 +19,7 @@ class Libro {
 	Formato formato
 	Idioma idioma
 	BigDecimal precio
+	String saga
 
 	static belongsTo = Autor
 	static hasMany = [autores: Autor, prestamos: Prestamo, lecturas: Lectura]
@@ -36,6 +37,7 @@ class Libro {
     	prestamos nullable: true
     	lecturas nullable: true
     	precio nullable: true, scale: 2
+		saga nullable: true
     }
 
     static mapping = {		

@@ -50,7 +50,15 @@
         <div class="property-value" aria-labelledby="sinopsis-label">${libro.sinopsis}</div>
     </li>
     <li class="fieldcontain">
+        <span id="observaciones-label" class="property-label"><g:message code="libro.observaciones.label" /></span>
+        <div class="property-value" aria-labelledby="observaciones-label">${libro.observaciones}</div>
+    </li>
+    <li class="fieldcontain">
         <span id="imagen-label" class="property-label"><g:message code="libro.imagen.label" /></span>
         <div class="property-value" aria-labelledby="imagen-label">${libro.imagen}</div>
+    </li>
+    <li class="fieldcontain">
+        <span id="saga-label" class="property-label"><g:message code="libro.saga.label" /></span>
+        <div class="property-value" aria-labelledby="saga-label">${libro.saga}</div>
     </li>
 </ol>

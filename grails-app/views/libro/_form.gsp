@@ -96,4 +96,9 @@
     <input type="text" name="imagen" value="${libro.imagen}" id="imagen">
 </div>
 
+<div class="fieldcontain">
+    <label for="saga"><g:message code="libro.saga.label" /></label>
+    <input type="text" name="saga" value="${libro.saga}" id="saga">
+</div>
+
 <g:render template="autoresChosen"/>
