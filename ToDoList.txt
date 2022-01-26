@@ -1,0 +1,4 @@
+- Menús desplegables
+- Mirar si el formateo de fechas lo puedo hacer con databinding. https://docs.grails.org/5.1.1/guide/single.html#dataBinding
+- Subir imagenes de los libros
+- Listado de autores ordenado alfabéticamente
