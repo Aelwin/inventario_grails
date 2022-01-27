@@ -13,6 +13,7 @@ class Autor {
 		version false
 		id generator: 'increment'
 		libros cascade: 'all-delete-orphan'
+		sort nombre: "asc"
 	}
 
 	@Override
