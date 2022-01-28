@@ -15,7 +15,11 @@ class AutorController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond autorService.list(params), model:[autorCount: autorService.count()]
+        respond autorService.list(params), model: [autorCount: autorService.count()]
+    }
+
+    def resultadoFiltro() {        
+        respond autorService.findAllByNombreIlike("%${params.nombre}%", params), view: "list"
     }
 
     def show(Long id) {

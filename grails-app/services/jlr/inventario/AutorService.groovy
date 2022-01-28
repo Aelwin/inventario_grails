@@ -15,4 +15,6 @@ interface AutorService {
 
     Autor save(Autor autor)
 
+    List<Autor> findAllByNombreIlike(String nombre, Map args)
+
 }
