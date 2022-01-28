@@ -1,3 +1,2 @@
 - Menús desplegables
 - Subir imagenes de los libros
-- Filtrar por saga
