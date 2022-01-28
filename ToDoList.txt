@@ -1,2 +1,3 @@
 - Menús desplegables
 - Subir imagenes de los libros
+- Hacer los filtros por ajax
