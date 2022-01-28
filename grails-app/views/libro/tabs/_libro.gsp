@@ -19,7 +19,7 @@
     </li>
     <li class="fieldcontain">
         <span id="fechaCompra-label" class="property-label"><g:message code="libro.fechaCompra.label" /></span>
-        <div class="property-value" aria-labelledby="fechaCompra-label"><g:formatDate format="dd/MM/yyyy" date="${libro.fechaCompra}"/></div>
+        <div class="property-value" aria-labelledby="fechaCompra-label"><g:formatDate date="${libro.fechaCompra}"/></div>
     </li>
     <li class="fieldcontain">
         <span id="precio-label" class="property-label"><g:message code="libro.precio.label" /></span>
@@ -54,11 +54,13 @@
         <div class="property-value" aria-labelledby="observaciones-label">${libro.observaciones}</div>
     </li>
     <li class="fieldcontain">
-        <span id="imagen-label" class="property-label"><g:message code="libro.imagen.label" /></span>
-        <div class="property-value" aria-labelledby="imagen-label">${libro.imagen}</div>
-    </li>
-    <li class="fieldcontain">
         <span id="saga-label" class="property-label"><g:message code="libro.saga.label" /></span>
         <div class="property-value" aria-labelledby="saga-label">${libro.saga}</div>
+    </li>
+    <li class="fieldcontain">
+        <span id="imagen-label" class="property-label"><g:message code="libro.imagen.label" /></span>
+        <div class="property-value" aria-labelledby="imagen-label">
+            <img src="data:image/png;base64,${libro.imagen}" width="91" height="136">
+        </div>
     </li>
 </ol>
