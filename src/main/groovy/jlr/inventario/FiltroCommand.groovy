@@ -15,6 +15,7 @@ class FiltroCommand implements grails.validation.Validateable {
 	String categoria
 	Formato formato
 	Idioma idioma
+	String saga
 
 	Integer max
 	Integer offset

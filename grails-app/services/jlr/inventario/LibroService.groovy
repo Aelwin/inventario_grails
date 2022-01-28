@@ -72,7 +72,7 @@ class LibroService {
                 }
                 if (filtroBusqueda.categoria) {
                     log.debug "Filtramos por la categoria ${filtroBusqueda.categoria}"
-                    ilike('propietario', "%${filtroBusqueda.categoria}%")
+                    ilike('categoria', "%${filtroBusqueda.categoria}%")
                 }
                 if (filtroBusqueda.formato) {
                     log.debug "Filtramos por el formato ${filtroBusqueda.formato}"
@@ -82,7 +82,10 @@ class LibroService {
                     log.debug "Filtramos por el idioma ${filtroBusqueda.idioma}"
                     eq('idioma', Idioma.values().find{ it == filtroBusqueda.idioma })
                 }
-                
+                if (filtroBusqueda.saga) {
+                    log.debug "Filtramos por la saga ${filtroBusqueda.saga}"
+                    ilike('saga', "%${filtroBusqueda.saga}%")
+                }
             }
             order("titulo", "asc")
         }

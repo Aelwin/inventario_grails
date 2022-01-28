@@ -47,6 +47,10 @@
 		    <label for="categoria"><g:message code="libro.categoria.label" /></label>		    
 		    <g:field type="text" name="categoria" value="${filtroBusqueda?.categoria}"/>
 		</div>
+		<div class="fieldcontain">
+		    <label for="saga"><g:message code="libro.saga.label" /></label>		    
+		    <g:field type="text" name="saga" value="${filtroBusqueda?.saga}"/>
+		</div>
 	</fieldset>
 	<fieldset class="buttons">
         <g:actionSubmit value="${message(code:'default.button.buscar.label')}" action="resultadoFiltro" />

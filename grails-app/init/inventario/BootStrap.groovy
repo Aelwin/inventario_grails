@@ -30,20 +30,20 @@ class BootStrap {
 			tolkien.addToLibros(esdla)
 
 			Libro camino = new Libro(titulo: "El camino de los reyes", propietario: "Juan", formato: Formato.DIGITAL, 
-				idioma: Idioma.CASTELLANO)
+				idioma: Idioma.CASTELLANO, saga: "Archivo de las tormentas")
 			camino.addToLecturas(fechaInicio: Date.parse("dd/MM/yyyy", "31/10/2020"), 
 				fechaFin: Date.parse("dd/MM/yyyy", "05/12/2020"), valoracion: 5)
 			camino.addToPrestamos(nombre: "Egoitz", fecha: Date.parse("dd/MM/yyyy", "27/02/2021"), devuelto: SiNo.SI)
 			sanderson.addToLibros(camino)
 
 			Libro palabras = new Libro(titulo: "Palabras radiantes", propietario: "Juan", formato: Formato.DIGITAL, 
-				idioma: Idioma.CASTELLANO)
+				idioma: Idioma.CASTELLANO, saga: "Archivo de las tormentas")
 			palabras.addToLecturas(fechaInicio: Date.parse("dd/MM/yyyy", "06/12/2020"), 
 				fechaFin: Date.parse("dd/MM/yyyy", "12/01/2021"), valoracion: 5)
 			sanderson.addToLibros(palabras)
 
 			Libro juramentada =  new Libro(titulo: "Juramentada", propietario: "Juan", formato: Formato.DIGITAL, 
-				idioma: Idioma.CASTELLANO)
+				idioma: Idioma.CASTELLANO, saga: "Archivo de las tormentas")
 			sanderson.addToLibros(juramentada)
 
 			Libro fundacion = new Libro(titulo: "Fundación", propietario: "Juan", formato: Formato.FISICO, 
